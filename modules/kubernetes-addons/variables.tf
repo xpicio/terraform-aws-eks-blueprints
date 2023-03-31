@@ -265,69 +265,6 @@ variable "crossplane_kubernetes_provider" {
   }
 }
 
-#-----------ONDAT ADDON-------------
-variable "enable_ondat" {
-  description = "Enable Ondat add-on"
-  type        = bool
-  default     = false
-}
-
-variable "ondat_helm_config" {
-  description = "Ondat Helm Chart config"
-  type        = any
-  default     = {}
-}
-
-variable "ondat_irsa_policies" {
-  description = "IAM policy ARNs for Ondat IRSA"
-  type        = list(string)
-  default     = []
-}
-
-variable "ondat_create_cluster" {
-  description = "Create cluster resources"
-  type        = bool
-  default     = true
-}
-
-variable "ondat_etcd_endpoints" {
-  description = "List of etcd endpoints for Ondat"
-  type        = list(string)
-  default     = []
-}
-
-variable "ondat_etcd_ca" {
-  description = "CA content for Ondat etcd"
-  type        = string
-  default     = null
-}
-
-variable "ondat_etcd_cert" {
-  description = "Certificate content for Ondat etcd"
-  type        = string
-  default     = null
-}
-
-variable "ondat_etcd_key" {
-  type        = string
-  description = "Private key content for Ondat etcd"
-  default     = null
-  sensitive   = true
-}
-
-variable "ondat_admin_username" {
-  description = "Username for Ondat admin user"
-  type        = string
-  default     = "storageos"
-}
-
-variable "ondat_admin_password" {
-  description = "Password for Ondat admin user"
-  type        = string
-  default     = "storageos"
-  sensitive   = true
-}
-
 #-----------External DNS ADDON-------------
 variable "enable_external_dns" {
   description = "External DNS add-on"
